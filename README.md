@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Document To Document360 Migration App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based web application that uploads a Microsoft Word document (`.docx`), converts it to clean HTML in the browser, and sends the generated HTML to **Document360** using the Article Creation API.
 
-## Available Scripts
 
-In the project directory, you can run:
+1. **Word Document Parsing**  
+   The app uses the [`mammoth`](https://github.com/mrzmmr/mammoth) library to read `.docx` files directly in the browser. Mammoth extracts structured content — headings, paragraphs, bullet lists, numbered lists, tables, and hyperlinks — and converts them into semantic HTML while preserving the original document hierarchy.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Programming Language & Tools
 
-### `npm test`
+| Tool / Library                  
+|----------------------
+| **JavaScript (ES6+)**           
+| **React 19**                    
+| **mammoth.js**                    
+| **Axios**                       
+| **CSS (vanilla)**               
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Steps to Run the Application
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Node.js** ≥ 16 and **npm** installed on your machine.
+- A **Document360** API key (and optionally a User ID, Category ID, etc.).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Clone the Repository
 
-### `npm run eject`
+git clone <repository-url>
+cd migration-app
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Steps to run the application
+npm install
+env
+# Required
+REACT_APP_API_URL=https://apihub.document360.io/v2/articles
+REACT_APP_API_KEY=YOUR_API_KEY_HERE
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 4. Start the Development Server
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+npm start
+The app will open at **http://localhost:3000**.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Structure
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+migration-app/
+├── public/            # Static assets
+├── src/
+│   ├── App.js         # Root component
+│   ├── App.css        # Root styles
+│   ├── DocUpload.js   # Main upload & conversion component
+│   ├── DocUpload.css  # Component styles (dark/light mode)
+│   ├── index.js       # Entry point
+│   └── index.css      # Global styles
+├── .env.example       # Sample environment config
+├── package.json       # Dependencies & scripts
+└── README.md          # This file
+```
