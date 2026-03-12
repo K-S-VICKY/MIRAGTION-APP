@@ -22,12 +22,12 @@ A React-based web application that uploads a Microsoft Word document (`.docx`), 
 
 ## Steps to Run the Application
 
-### Prerequisites
+## Prerequisites
 
 - **Node.js** ≥ 16 and **npm** installed on your machine.
 - A **Document360** API key (and optionally a User ID, Category ID, etc.).
 
-### 1. Clone the Repository
+ **Clone the Repository
 
 git clone <repository-url>
 cd migration-app
@@ -35,19 +35,16 @@ cd migration-app
 Steps to run the application
 npm install
 env
-# Required
+*Required
 REACT_APP_API_URL=https://apihub.document360.io/v2/articles
 REACT_APP_API_KEY=YOUR_API_KEY_HERE
 
-```
+
  Start the Development Server
-
 npm start
-The app will open at **http://localhost:3000**.
+The app will open at **http://localhost:3000**
 
-
-
-## Project Structure
+Project Structure
 
 migration-app/
 ├── public/            # Static assets
@@ -61,4 +58,3 @@ migration-app/
 ├── .env.example       # Sample environment config
 ├── package.json       # Dependencies & scripts
 └── README.md          # This file
-```
