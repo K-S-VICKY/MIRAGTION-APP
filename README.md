@@ -40,8 +40,7 @@ REACT_APP_API_URL=https://apihub.document360.io/v2/articles
 REACT_APP_API_KEY=YOUR_API_KEY_HERE
 
 ```
-
-### 4. Start the Development Server
+ Start the Development Server
 
 npm start
 The app will open at **http://localhost:3000**.
