@@ -117,9 +117,6 @@ function DocUpload() {
     const missing = [];
     if (!API_URL) missing.push("REACT_APP_API_URL");
     if (!API_KEY) missing.push("REACT_APP_API_KEY");
-    if (!USER_ID) missing.push("REACT_APP_USER_ID");
-    if (!CATEGORY_ID) missing.push("REACT_APP_CATEGORY_ID");
-    if (!PROJECT_VERSION_ID) missing.push("REACT_APP_PROJECT_VERSION_ID");
     if (missing.length > 0) {
       setErrorMessage(`Missing required .env config: ${missing.join(", ")}`);
       return false;
